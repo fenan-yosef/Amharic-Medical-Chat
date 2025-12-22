@@ -11,6 +11,14 @@
     "keywords": ["ትኩሳት", "ተኩሻ", "ብርድ", "ላብ"],
     "canonical_am": "ትኩሳት አለብኝ"
   },
+  "cough": {
+    "keywords": ["ሳል", "ያስለኛል", "ጉንፋን"],
+    "canonical_am": "ሳል አለብኝ"
+  },
+  "sneezing": {
+    "keywords": ["ያስነጥሰኛል", "እንጥሼ", "አስነጥሳልሁ"],
+    "canonical_am": "ያስነጥሰኛል"
+  },
   "respiratory": {
     "keywords": ["ሳል", "ደረት", "ትንፋሽ", "መተንፈስ"],
     "canonical_am": "የመተንፈስ ችግር አለብኝ"

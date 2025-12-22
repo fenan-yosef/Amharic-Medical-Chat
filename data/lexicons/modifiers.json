@@ -1,6 +1,6 @@
 {
   "ሰንጥቆ": {"pain_quality": "splitting", "intensity": "severe"},
-  "በጣም": {"intensity": "severe"},
+  "በጣም": {"intensity": "severe", "quality": "very"},
   "ከባድ": {"intensity": "severe"},
   "እጅግ": {"intensity": "severe"},
   "ትንሽ": {"intensity": "mild"},

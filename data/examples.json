@@ -37,6 +37,7 @@
     {"id": "ex027", "text": "የድካም ስሜት", "intent": "symptom_query", "symptom": "general"},
 
     {"id": "ex028", "text": "የሰውነት ማሳከክ", "intent": "symptom_query", "symptom": "skin"},
-    {"id": "ex029", "text": "የቆዳ ሽፍታ", "intent": "symptom_query", "symptom": "skin"}
+    {"id": "ex029", "text": "የቆዳ ሽፍታ", "intent": "symptom_query", "symptom": "skin"},
+    {"id": "ex030", "text": "ያስነጥሰኛል", "intent": "symptom_query", "symptom": "sneezing"}
   ]
 }
