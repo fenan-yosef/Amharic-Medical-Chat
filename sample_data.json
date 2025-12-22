@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "description": "Dataset for Explainable Amharic Symptom Chatbot",
+    "version": "1.0",
+    "schema_definition": {
+      "colloquial_query": "The raw, informal user input in Amharic (Input)",
+      "normalized_symptom": "Standardized/Canonical Amharic description (Target for Embeddings)",
+      "intent": "Classification of user goal (symptom_query, emergency, informational)",
+      "severity": "Clinical urgency level (routine, moderate, high, critical)",
+      "body_part": "Anatomical location of the symptom",
+      "temporal": "Duration, frequency, or onset (e.g., sudden, continuous, 3 days)",
+      "pattern_note": "Linguistic explanation (Metaphor, Idiom, Intensity Modifier, etc.)"
+    }
+  },
+  "data": [
+    {
+      "category": "Headache",
+      "colloquial_query": "ራሴን ሰንጥቆ ያመኛል",
+      "normalized_symptom": "ከባድ የራስ ምታት (Severe Headache)",
+      "intent": "symptom_query",
+      "severity": "high",
+      "body_part": "head",
+      "temporal": "unspecified",
+      "pattern_note": "Metaphor: 'Splitting' (ሰንጥቆ) implies severe pain"
+    },
+    {
+      "category": "Headache",
+      "colloquial_query": "ራሴን እንደ መዶሻ ይወቅረኛል",
+      "normalized_symptom": "የሚመታ የራስ ምታት (Throbbing Headache)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "head",
+      "temporal": "continuous",
+      "pattern_note": "Simile: 'Like a hammer' (እንደ መዶሻ) implies throbbing quality"
+    },
+    {
+      "category": "Headache",
+      "colloquial_query": "ግንባሬን ብቻ ያቃጥለኛል",
+      "normalized_symptom": "የግንባር ህመም (Frontal Headache)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "head",
+      "temporal": "unspecified",
+      "pattern_note": "Location specific: 'Forehead' (ግንባር) + Sensory: 'Burning' (ያቃጥለኛል)"
+    },
+    {
+      "category": "Headache",
+      "colloquial_query": "ራሴን ያዞረኛል ደግሞም ያመኛል",
+      "normalized_symptom": "ራስ ማዞር እና ህመም (Dizziness and Headache)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "head",
+      "temporal": "concomitant",
+      "pattern_note": "Compound symptom: Dizziness + Pain"
+    },
+    {
+      "category": "Headache",
+      "colloquial_query": "ጭንቅላቴ ሊፈነዳ ነው",
+      "normalized_symptom": "በጣም ከባድ የራስ ምታት (Explosive Headache)",
+      "intent": "symptom_query",
+      "severity": "high",
+      "body_part": "head",
+      "temporal": "acute",
+      "pattern_note": "Hyperbole: 'About to explode' (ሊፈነዳ ነው)"
+    },
+    {
+      "category": "Stomach Pain",
+      "colloquial_query": "ሆዴን ቆርጦ ያመኛል",
+      "normalized_symptom": "የሆድ ቁርጠት (Abdominal Cramps)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "abdomen",
+      "temporal": "intermittent",
+      "pattern_note": "Idiom: 'Cutting' (ቆርጦ) refers to cramping pain"
+    },
+    {
+      "category": "Stomach Pain",
+      "colloquial_query": "ሆዴን ነፋኝ",
+      "normalized_symptom": "የሆድ መነፋት (Bloating)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "abdomen",
+      "temporal": "unspecified",
+      "pattern_note": "Direct description: 'Bloated' (ነፋኝ)"
+    },
+    {
+      "category": "Stomach Pain",
+      "colloquial_query": "ሆዴን እንደ እሳት ያቃጥለኛል",
+      "normalized_symptom": "የጨጓራ ህመም (Gastritis/Burning Pain)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "abdomen",
+      "temporal": "continuous",
+      "pattern_note": "Sensory Metaphor: 'Like fire' (እንደ እሳት)"
+    },
+    {
+      "category": "Stomach Pain",
+      "colloquial_query": "ምግብ ስበላ ሆዴን ይወጋኛል",
+      "normalized_symptom": "ከምግብ በኋላ የሆድ ህመም (Pain after eating)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "abdomen",
+      "temporal": "post-prandial",
+      "pattern_note": "Contextual: 'When eating' (ምግብ ስበላ)"
+    },
+    {
+      "category": "Stomach Pain",
+      "colloquial_query": "ሆዴን ይጮሃል",
+      "normalized_symptom": "የሆድ መጮህ (Stomach Rumbling/Gurgling)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "abdomen",
+      "temporal": "unspecified",
+      "pattern_note": "Onomatopoeic/Descriptive"
+    },
+    {
+      "category": "Fever",
+      "colloquial_query": "ሰውነቴን እሳት ለበስኩ",
+      "normalized_symptom": "ከፍተኛ ትኩሳት (High Fever)",
+      "intent": "symptom_query",
+      "severity": "high",
+      "body_part": "general",
+      "temporal": "continuous",
+      "pattern_note": "Metaphor: 'Clothed in fire' (እሳት ለበስኩ)"
+    },
+    {
+      "category": "Fever",
+      "colloquial_query": "ብርድ ብርድ ይለኛል",
+      "normalized_symptom": "የብርድ ስሜት (Chills)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "general",
+      "temporal": "unspecified",
+      "pattern_note": "Repetition: 'Cold cold' (ብርድ ብርድ) implies chills"
+    },
+    {
+      "category": "Fever",
+      "colloquial_query": "ለሶስት ቀን ተኩሻለሁ",
+      "normalized_symptom": "ትኩሳት (Fever)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "general",
+      "temporal": "3 days",
+      "pattern_note": "Temporal marker: 'Three days' (ለሶስት ቀን)"
+    },
+    {
+      "category": "Fever",
+      "colloquial_query": "ማታ ማታ ያላበኛል",
+      "normalized_symptom": "የሌሊት ላብ (Night Sweats)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "general",
+      "temporal": "nocturnal",
+      "pattern_note": "Temporal marker: 'Night night' (ማታ ማታ)"
+    },
+    {
+      "category": "Respiratory",
+      "colloquial_query": "ደረቅ ሳል አለብኝ",
+      "normalized_symptom": "ደረቅ ሳል (Dry Cough)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "chest",
+      "temporal": "unspecified",
+      "pattern_note": "Direct modifier: 'Dry' (ደረቅ)"
+    },
+    {
+      "category": "Respiratory",
+      "colloquial_query": "ደረት ላይ ይወጋኛል",
+      "normalized_symptom": "የደረት ህመም (Chest Pain)",
+      "intent": "symptom_query",
+      "severity": "high",
+      "body_part": "chest",
+      "temporal": "sharp",
+      "pattern_note": "Sensory: 'Stabbing/Pricking' (ይወጋኛል)"
+    },
+    {
+      "category": "Respiratory",
+      "colloquial_query": "ትንፋሽ አጠረኝ",
+      "normalized_symptom": "የትንፋሽ እጥረት (Shortness of Breath)",
+      "intent": "symptom_query",
+      "severity": "high",
+      "body_part": "chest",
+      "temporal": "unspecified",
+      "pattern_note": "Idiom: 'Breath shortened' (ትንፋሽ አጠረኝ)"
+    },
+    {
+      "category": "Respiratory",
+      "colloquial_query": "ሲር ሲር ይለኛል",
+      "normalized_symptom": "የመተንፈስ ችግር (Wheezing)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "chest",
+      "temporal": "continuous",
+      "pattern_note": "Onomatopoeia: 'Sir sir' sound implies wheezing"
+    },
+    {
+      "category": "Eye",
+      "colloquial_query": "ዓይኔን ጭልምልም ይልብኛል",
+      "normalized_symptom": "የዓይን ብዥታ (Blurred Vision/Darkening)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "eye",
+      "temporal": "intermittent",
+      "pattern_note": "Reduplication: 'Chilimlim' implies flickering darkness"
+    },
+    {
+      "category": "Eye",
+      "colloquial_query": "ዓይኔን እንባ ይሞላል",
+      "normalized_symptom": "የዓይን እንባ መፍሰስ (Watery Eyes)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "eye",
+      "temporal": "continuous",
+      "pattern_note": "Direct description"
+    },
+    {
+      "category": "Eye",
+      "colloquial_query": "ዓይኔ ደም መስሏል",
+      "normalized_symptom": "የዓይን መቅላት (Red Eye)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "eye",
+      "temporal": "unspecified",
+      "pattern_note": "Simile: 'Resembles blood' (ደም መስሏል)"
+    },
+    {
+      "category": "Eye",
+      "colloquial_query": "ዓይኔ ጠፋ",
+      "normalized_symptom": "የዓይን ማየት አለመቻል (Vision Loss)",
+      "intent": "emergency",
+      "severity": "critical",
+      "body_part": "eye",
+      "temporal": "sudden",
+      "pattern_note": "Hyperbole/Literal: 'Eye disappeared/lost' (ጠፋ)"
+    },
+    {
+      "category": "Emergency",
+      "colloquial_query": "ደም እየተፋሁ ነው",
+      "normalized_symptom": "ደም መትፋት (Coughing Blood)",
+      "intent": "emergency",
+      "severity": "critical",
+      "body_part": "chest",
+      "temporal": "acute",
+      "pattern_note": "Critical keyword: 'Spitting blood' (ደም እየተፋሁ)"
+    },
+    {
+      "category": "Emergency",
+      "colloquial_query": "ልቤ ቆመ",
+      "normalized_symptom": "የልብ ህመም (Cardiac Arrest/Severe Pain)",
+      "intent": "emergency",
+      "severity": "critical",
+      "body_part": "chest",
+      "temporal": "sudden",
+      "pattern_note": "Hyperbole: 'Heart stopped' (ልቤ ቆመ)"
+    },
+    {
+      "category": "Emergency",
+      "colloquial_query": "ራሴን ስቼ ወደቅኩ",
+      "normalized_symptom": "ራስ መሳት (Fainting)",
+      "intent": "emergency",
+      "severity": "critical",
+      "body_part": "general",
+      "temporal": "sudden",
+      "pattern_note": "Action description: 'Lost self and fell'"
+    },
+    {
+      "category": "Emergency",
+      "colloquial_query": "መተንፈስ አልቻልኩም",
+      "normalized_symptom": "የመተንፈስ እጥረት (Inability to Breathe)",
+      "intent": "emergency",
+      "severity": "critical",
+      "body_part": "chest",
+      "temporal": "acute",
+      "pattern_note": "Negation: 'Cannot breathe' (መተንፈስ አልቻልኩም)"
+    },
+    {
+      "category": "General Pain",
+      "colloquial_query": "መላ ሰውነቴን ይቀጠቅጠኛል",
+      "normalized_symptom": "የሰውነት ህመም (Body Aches)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "general",
+      "temporal": "continuous",
+      "pattern_note": "Metaphor: 'Bruising/Beating' (ይቀጠቅጠኛል)"
+    },
+    {
+      "category": "General Pain",
+      "colloquial_query": "አቅም አነሰኝ",
+      "normalized_symptom": "የድካም ስሜት (Fatigue/Weakness)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "general",
+      "temporal": "unspecified",
+      "pattern_note": "Idiom: 'Power decreased' (አቅም አነሰኝ)"
+    },
+    {
+      "category": "Skin",
+      "colloquial_query": "ሰውነቴን ይበላኛል",
+      "normalized_symptom": "የሰውነት ማሳከክ (Itching)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "skin",
+      "temporal": "continuous",
+      "pattern_note": "Idiom: 'Eats me' (ይበላኛል) means itching"
+    },
+    {
+      "category": "Skin",
+      "colloquial_query": "ሽፍታ ወጣብኝ",
+      "normalized_symptom": "የቆዳ ሽፍታ (Rash)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "skin",
+      "temporal": "acute",
+      "pattern_note": "Direct description"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "headache": {
+    "keywords": ["ራስ", "ራሴ", "ጭንቅላት", "ግንባር"],
+    "canonical_am": "ራስ ምታት አለብኝ"
+  },
+  "stomach_pain": {
+    "keywords": ["ሆድ", "ጨጓራ"],
+    "canonical_am": "የሆድ ህመም አለብኝ"
+  },
+  "fever": {
+    "keywords": ["ትኩሳት", "ተኩሻ", "ብርድ", "ላብ"],
+    "canonical_am": "ትኩሳት አለብኝ"
+  },
+  "respiratory": {
+    "keywords": ["ሳል", "ደረት", "ትንፋሽ", "መተንፈስ"],
+    "canonical_am": "የመተንፈስ ችግር አለብኝ"
+  },
+  "eye": {
+    "keywords": ["ዓይን", "ዓይኔ"],
+    "canonical_am": "የዓይን ችግር አለብኝ"
+  },
+  "skin": {
+    "keywords": ["ቆዳ", "ሽፍታ", "ማሳከክ"],
+    "canonical_am": "የቆዳ ችግር አለብኝ"
+  },
+  "general": {
+    "keywords": ["ሰውነት", "ድካም", "አቅም"],
+    "canonical_am": "የሰውነት ህመም አለብኝ"
+  }
+}

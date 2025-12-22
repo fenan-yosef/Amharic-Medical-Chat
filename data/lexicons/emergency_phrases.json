@@ -1,0 +1,8 @@
+{
+  "ደም እየተፋሁ": {"intent": "emergency", "severity": "critical", "reason": "blood"},
+  "ደም መፍሰስ": {"intent": "emergency", "severity": "critical", "reason": "bleeding"},
+  "ልቤ ቆመ": {"intent": "emergency", "severity": "critical", "reason": "cardiac"},
+  "መተንፈስ አልቻልኩም": {"intent": "emergency", "severity": "critical", "reason": "breathing"},
+  "ወደቅኩ": {"intent": "emergency", "severity": "critical", "reason": "collapse"},
+  "ዓይኔ ጠፋ": {"intent": "emergency", "severity": "critical", "reason": "vision_loss"}
+}

@@ -1,0 +1,13 @@
+{
+  "ሰንጥቆ": {"pain_quality": "splitting", "intensity": "severe"},
+  "በጣም": {"intensity": "severe"},
+  "ከባድ": {"intensity": "severe"},
+  "እጅግ": {"intensity": "severe"},
+  "ትንሽ": {"intensity": "mild"},
+  "ደረቅ": {"quality": "dry"},
+  "ያቃጥለኛል": {"pain_quality": "burning"},
+  "ይወጋኛል": {"pain_quality": "stabbing"},
+  "ይወቅረኛል": {"pain_quality": "throbbing"},
+  "ጭልምልም": {"quality": "darkening"},
+  "ሊፈነዳ": {"intensity": "severe", "quality": "explosive"}
+}

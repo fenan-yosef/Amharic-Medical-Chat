@@ -1,0 +1,42 @@
+{
+  "source": "sample_data.json",
+  "notes": "These examples are used for embedding + similarity search. The embedding_text is derived from normalized_symptom by stripping English parentheses.",
+  "items": [
+    {"id": "ex001", "text": "ከባድ የራስ ምታት", "intent": "symptom_query", "symptom": "headache"},
+    {"id": "ex002", "text": "የሚመታ የራስ ምታት", "intent": "symptom_query", "symptom": "headache"},
+    {"id": "ex003", "text": "የግንባር ህመም", "intent": "symptom_query", "symptom": "headache"},
+    {"id": "ex004", "text": "ራስ ማዞር እና ህመም", "intent": "symptom_query", "symptom": "headache"},
+    {"id": "ex005", "text": "በጣም ከባድ የራስ ምታት", "intent": "symptom_query", "symptom": "headache"},
+
+    {"id": "ex006", "text": "የሆድ ቁርጠት", "intent": "symptom_query", "symptom": "stomach_pain"},
+    {"id": "ex007", "text": "የሆድ መነፋት", "intent": "symptom_query", "symptom": "stomach_pain"},
+    {"id": "ex008", "text": "የጨጓራ ህመም", "intent": "symptom_query", "symptom": "stomach_pain"},
+    {"id": "ex009", "text": "ከምግብ በኋላ የሆድ ህመም", "intent": "symptom_query", "symptom": "stomach_pain"},
+    {"id": "ex010", "text": "የሆድ መጮህ", "intent": "symptom_query", "symptom": "stomach_pain"},
+
+    {"id": "ex011", "text": "ከፍተኛ ትኩሳት", "intent": "symptom_query", "symptom": "fever"},
+    {"id": "ex012", "text": "የብርድ ስሜት", "intent": "symptom_query", "symptom": "fever"},
+    {"id": "ex013", "text": "ትኩሳት", "intent": "symptom_query", "symptom": "fever"},
+    {"id": "ex014", "text": "የሌሊት ላብ", "intent": "symptom_query", "symptom": "fever"},
+
+    {"id": "ex015", "text": "ደረቅ ሳል", "intent": "symptom_query", "symptom": "respiratory"},
+    {"id": "ex016", "text": "የደረት ህመም", "intent": "symptom_query", "symptom": "respiratory"},
+    {"id": "ex017", "text": "የትንፋሽ እጥረት", "intent": "symptom_query", "symptom": "respiratory"},
+    {"id": "ex018", "text": "የመተንፈስ ችግር", "intent": "symptom_query", "symptom": "respiratory"},
+
+    {"id": "ex019", "text": "የዓይን ብዥታ", "intent": "symptom_query", "symptom": "eye"},
+    {"id": "ex020", "text": "የዓይን እንባ መፍሰስ", "intent": "symptom_query", "symptom": "eye"},
+    {"id": "ex021", "text": "የዓይን መቅላት", "intent": "symptom_query", "symptom": "eye"},
+    {"id": "ex022", "text": "የዓይን ማየት አለመቻል", "intent": "emergency", "symptom": "eye"},
+
+    {"id": "ex023", "text": "ደም መትፋት", "intent": "emergency", "symptom": "respiratory"},
+    {"id": "ex024", "text": "ራስ መሳት", "intent": "emergency", "symptom": "general"},
+    {"id": "ex025", "text": "የመተንፈስ እጥረት", "intent": "emergency", "symptom": "respiratory"},
+
+    {"id": "ex026", "text": "የሰውነት ህመም", "intent": "symptom_query", "symptom": "general"},
+    {"id": "ex027", "text": "የድካም ስሜት", "intent": "symptom_query", "symptom": "general"},
+
+    {"id": "ex028", "text": "የሰውነት ማሳከክ", "intent": "symptom_query", "symptom": "skin"},
+    {"id": "ex029", "text": "የቆዳ ሽፍታ", "intent": "symptom_query", "symptom": "skin"}
+  ]
+}

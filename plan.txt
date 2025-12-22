@@ -1,0 +1,265 @@
+
+# Explainable Amharic NLP Chatbot (Symptom Understanding) — Implementation Plan
+
+This plan turns the proposal into a working **explainable prototype**. The goal is NOT diagnosis. The goal is to show how Amharic text becomes structured meaning with traceable steps.
+
+---
+
+## 0) What you are building (MVP definition)
+
+Input: a single Amharic sentence describing discomfort.
+
+Output (always show evidence):
+1) Normalized / canonical sentence (Amharic)
+2) Extracted structured features (JSON)
+3) Predicted intent + symptom category
+4) Similarity scores vs. the top matching examples
+
+Supported scope (keep this strict):
+- 5 symptom categories (example: headache, stomach_pain, fever, cough, nausea)
+- 20–30 colloquial modifier rules (intensity + pain quality + body-part mapping)
+- Text-only, pretrained embeddings only (no fine-tuning)
+
+---
+
+## 1) Best approach for THIS project (why this architecture)
+
+Use a **hybrid pipeline**:
+
+### A) Rule-based normalization + feature extraction
+Best because:
+- You need deterministic, explainable handling of rare colloquial phrases (low-resource)
+- You can explicitly extract intensity/quality ("splitting", "mild") which embeddings may blur
+
+### B) Sentence embeddings + nearest-neighbor similarity
+Best because:
+- No large labeled dataset needed
+- Similarity scores are naturally explainable
+- Easy to show “why this label” by displaying top-k neighbors
+
+Recommended embedding model (practical + strong):
+- sentence-transformers: `paraphrase-multilingual-mpnet-base-v2`
+Fallback (faster, smaller):
+- `paraphrase-multilingual-MiniLM-L12-v2`
+
+---
+
+## 2) Repo structure (keep it clean and inspectable)
+
+Create this folder layout:
+
+ulala/
+	data/
+		lexicons/
+			modifiers.json
+			body_parts.json
+			symptoms.json
+		examples.json
+	src/
+		normalize.py
+		encode.py
+		classify.py
+		explain.py
+		app.py
+	tests/
+		test_normalize.py
+	requirements.txt
+	README.md
+
+Why this layout:
+- `data/` is human-editable rules and example sentences
+- `src/` is code
+- tests focus on deterministic rule layer (highest risk)
+
+---
+
+## 3) Data you must prepare (small but high quality)
+
+### 3.1 Lexicons (JSON; rules-as-data)
+
+1) modifiers.json
+- Key: Amharic token/phrase
+- Values: intensity and/or quality
+
+Example entry idea:
+- "ሰንጥቆ" -> {"quality": "splitting", "intensity": "severe"}
+- "በጣም" -> {"intensity": "severe"}
+- "ትንሽ" -> {"intensity": "mild"}
+
+2) body_parts.json
+- Map surface forms to canonical body part
+- "ራሴን" -> "head", "ሆዴን" -> "abdomen"
+
+3) symptoms.json
+- Maps from canonical body-part + cue words to symptom label
+- Keep it simple: only 5 categories
+
+### 3.2 Labeled examples (examples.json)
+
+You need ~5–10 canonical example sentences per symptom category (25–50 total).
+Each example must include:
+- text (canonical Amharic)
+- intent (start with `symptom_query` only; optionally add 1 more later)
+- symptom (one of the 5 categories)
+
+Why canonical examples:
+- Reduces embedding confusion from noisy colloquial variants
+- Lets your rule layer handle the “creative language” part
+
+---
+
+## 4) Implementation steps (do in this order)
+
+### Step 1 — Environment setup
+1) Create `requirements.txt` with:
+	 - sentence-transformers
+	 - transformers
+	 - scikit-learn
+	 - numpy
+
+2) Verify you can import and load the embedding model.
+
+Success criteria:
+- A small script encodes two sentences and prints cosine similarity.
+
+### Step 2 — Rule-based normalization + feature extraction (core explainability)
+
+Implement `src/normalize.py`:
+Inputs:
+- raw_text (Amharic)
+- lexicons (loaded from JSON)
+
+Outputs:
+- tokens (simple whitespace split is OK for MVP)
+- extracted_features JSON:
+	{"body_part": ..., "base_symptom": ..., "pain_quality": ..., "intensity": ...}
+- canonical_text (Amharic)
+
+Best practice for rules:
+- Keep rules deterministic
+- Prefer phrase matching (multi-word) before single token matching
+- Store rule hits as a list so you can show “what matched”
+
+Success criteria:
+- Your demo sentence "ራሴን ሰንጥቆ ያመኛል" yields:
+	- body_part=head
+	- quality=splitting
+	- intensity=severe
+	- canonical_text like "ራሴን አሞኛል" (or whichever you choose)
+
+### Step 3 — Embedding (encoding) layer
+
+Implement `src/encode.py`:
+- Load SentenceTransformer once
+- `encode_sentence(text) -> vector`
+
+Best practice:
+- Normalize embeddings with `normalize_embeddings=True` (makes cosine similarity easy)
+- Cache vectors for examples at startup (fast runtime)
+
+Success criteria:
+- `examples.json` sentences are encoded and stored in memory.
+
+### Step 4 — Similarity classification (nearest neighbor)
+
+Implement `src/classify.py`:
+- Compute cosine similarity between input vector and all example vectors
+- Take top-k (k=3 is enough)
+- Predicted label = top-1 (or majority vote of top-3 if you prefer)
+- Use a threshold (e.g., 0.45–0.60) to return "unknown" when too uncertain
+
+Best approach for explainability:
+- Always print the top-k matches with their similarity scores and labels
+- Threshold is important to avoid confident nonsense
+
+Success criteria:
+- For 10 sample queries, it outputs sensible top-k neighbors and scores.
+
+### Step 5 — Explainability report (the “main feature”)
+
+Implement `src/explain.py` to produce a single structured explanation object:
+
+{
+	"input": "...",
+	"tokens": [...],
+	"rule_matches": [...],
+	"features": {...},
+	"canonical": "...",
+	"embedding_model": "...",
+	"top_matches": [
+		 {"text": "...", "intent": "...", "symptom": "...", "score": 0.73}
+	],
+	"decision": {"intent": "...", "symptom": "...", "threshold": 0.55, "accepted": true}
+}
+
+Success criteria:
+- You can paste the JSON output into your report and defend every field.
+
+### Step 6 — Minimal UI / interaction
+
+Implement `src/app.py` as a CLI:
+- Read user input from terminal
+- Print:
+	- canonical sentence
+	- features JSON
+	- predicted label
+	- top-k neighbors with scores
+
+Keep it simple. The goal is not UX; it’s traceability.
+
+---
+
+## 5) Evaluation (what to measure for the report)
+
+You should evaluate BOTH layers:
+
+1) Rule layer evaluation (manual test set)
+- Create 20 sentences with known features
+- Measure: feature extraction accuracy (body_part, intensity, quality)
+
+2) Embedding layer evaluation (retrieval quality)
+- For 20 queries, check whether the correct symptom is in top-3
+- Report top-1 and top-3 accuracy
+
+Also include error analysis:
+- cases where rules failed (missing lexicon item)
+- cases where embeddings confuse categories (e.g., headache vs fever)
+
+---
+
+## 6) Practical tips for Amharic (low-resource best practices)
+
+- Don’t over-engineer tokenization for MVP. Start with whitespace + simple phrase matching.
+- Focus your lexicons on the exact class examples you will demo.
+- Keep canonical sentences consistent (same style/tense) for embedding stability.
+- Add a similarity threshold + “unknown” output (better than forced wrong label).
+
+---
+
+## 7) Risks + how you mitigate them
+
+- Risk: colloquial phrase not covered
+	- Mitigation: keep rules as JSON; quickly add entries during testing
+
+- Risk: embeddings weak on Amharic nuance
+	- Mitigation: canonicalize more aggressively; increase example coverage per symptom
+
+- Risk: user expects diagnosis
+	- Mitigation: always display a disclaimer in CLI and README: “Not medical advice.”
+
+---
+
+## 8) Deliverables checklist (what to submit)
+
+- Working CLI demo showing full explainability output
+- JSON lexicons and examples included
+- Short README with:
+	- how to run
+	- model used
+	- limitations
+- Project report sections:
+	- architecture diagram
+	- rules layer explanation
+	- embedding + similarity explanation
+	- evaluation + limitations
+
