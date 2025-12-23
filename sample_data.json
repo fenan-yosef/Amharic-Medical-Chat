@@ -35,7 +35,7 @@
     },
     {
       "category": "Headache",
-      "colloquial_query": "ግንባሬን ብቻ ያቃጥለኛል",
+      "colloquial_query": "ግንባሬን ያቃጥለኛል",
       "normalized_symptom": "የግንባር ህመም (Frontal Headache)",
       "intent": "symptom_query",
       "severity": "routine",
@@ -65,7 +65,17 @@
     },
     {
       "category": "Stomach Pain",
-      "colloquial_query": "ሆዴን ቆርጦ ያመኛል",
+      "colloquial_query": "ሆዴን ይቆርጠኛል",
+      "normalized_symptom": "የሆድ ቁርጠት (Abdominal Cramps)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "abdomen",
+      "temporal": "intermittent",
+      "pattern_note": "Idiom: 'Cutting' (ቆርጦ) refers to cramping pain"
+    },
+    {
+      "category": "Stomach Pain",
+      "colloquial_query": "ሆዴን ይቆርጠኛል",
       "normalized_symptom": "የሆድ ቁርጠት (Abdominal Cramps)",
       "intent": "symptom_query",
       "severity": "moderate",
@@ -105,7 +115,7 @@
     },
     {
       "category": "Stomach Pain",
-      "colloquial_query": "ሆዴን ይጮሃል",
+      "colloquial_query": "ሆዴ ይጮሃል",
       "normalized_symptom": "የሆድ መጮህ (Stomach Rumbling/Gurgling)",
       "intent": "symptom_query",
       "severity": "routine",
@@ -312,6 +322,246 @@
       "body_part": "skin",
       "temporal": "acute",
       "pattern_note": "Direct description"
+    },
+    {
+      "category": "Throat",
+      "colloquial_query": "ጉሮሮዬን ይከርከረኛል",
+      "normalized_symptom": "የጉሮሮ መብላት/ማሳከክ (Scratchy Throat)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "throat",
+      "temporal": "continuous",
+      "pattern_note": "Sensory: 'Kerkere' implies a scratchy, rough sensation"
+    },
+    {
+      "category": "Throat",
+      "colloquial_query": "ምግብ መዋጥ አቃተኝ",
+      "normalized_symptom": "የመዋጥ ችግር (Dysphagia)",
+      "intent": "symptom_query",
+      "severity": "high",
+      "body_part": "throat",
+      "temporal": "unspecified",
+      "pattern_note": "Functional limitation: 'Failed to swallow' (መዋጥ አቃተኝ)"
+    },
+    {
+      "category": "Dental",
+      "colloquial_query": "ጥርሴን ቁርጥ ቁርጥ ያደርገኛል",
+      "normalized_symptom": "የጥርስ ህመም (Toothache)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "mouth",
+      "temporal": "intermittent",
+      "pattern_note": "Reduplication: 'Kurt kurt' implies throbbing/pulsating pain"
+    },
+    {
+      "category": "Nose",
+      "colloquial_query": "አፍንጫዬ ይታፈናል",
+      "normalized_symptom": "የአፍንጫ መታፈን (Nasal Congestion)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "nose",
+      "temporal": "continuous",
+      "pattern_note": "Passive verb: 'Is suffocated/blocked' (ይታፈናል)"
+    },
+    {
+      "category": "Nose",
+      "colloquial_query": "ንፍጥ ይወርደኛል",
+      "normalized_symptom": "የአፍንጫ ፈሳሽ መውረድ (Runny Nose)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "nose",
+      "temporal": "continuous",
+      "pattern_note": "Direct description: 'Mucus descending'"
+    },
+    {
+      "category": "Stomach/Digestive",
+      "colloquial_query": "ያቅለሸልሸኛል",
+      "normalized_symptom": "ማቅለሽለሽ (Nausea)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "abdomen",
+      "temporal": "continuous",
+      "pattern_note": "Anatomical Shift: Uses 'Heart' (ልቤን) to refer to upper stomach nausea"
+    },
+    {
+      "category": "Stomach/Digestive",
+      "colloquial_query": "ያስቀምጠኛል",
+      "normalized_symptom": "ተቅማጥ (Diarrhea)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "abdomen",
+      "temporal": "frequent",
+      "pattern_note": "Idiom: 'makes me sit' (ያስቀምጠኛል) implies long time on toilet"
+    },
+    {
+      "category": "Stomach/Digestive",
+      "colloquial_query": "ሆዴ ደረቀ",
+      "normalized_symptom": "የሆድ ድርቀት (Constipation)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "abdomen",
+      "temporal": "continuous",
+      "pattern_note": "Idiom: 'Dried' (ደረቀ) implies constipation"
+    },
+    {
+      "category": "Chest/Heart",
+      "colloquial_query": "ልቤ በሃይል ይመታል",
+      "normalized_symptom": "የልብ ምት መጨመር (Palpitations)",
+      "intent": "symptom_query",
+      "severity": "high",
+      "body_part": "chest",
+      "temporal": "rapid",
+      "pattern_note": "Intensity marker: 'With power' (በሃይል)"
+    },
+    {
+      "category": "Chest/Heart",
+      "colloquial_query": "ደረቴን ያቃጥለኛል",
+      "normalized_symptom": "የልብ/የደረት ማቃጠል (Heartburn/Reflux)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "chest",
+      "temporal": "post-prandial",
+      "pattern_note": "Sensory: 'chest burns' (ያቃጥለኛል)"
+    },
+    {
+      "category": "Ear",
+      "colloquial_query": "ጆሮዬ ይጮሃል",
+      "normalized_symptom": "የጆሮ ጩኸት (Tinnitus)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "ear",
+      "temporal": "continuous",
+      "pattern_note": "Personification: 'My ear screams/shouts'"
+    },
+    {
+      "category": "Musculoskeletal",
+      "colloquial_query": "ወገቤን ቆረጠኝ",
+      "normalized_symptom": "የወገብ ህመም (Lower Back Pain)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "back",
+      "temporal": "acute",
+      "pattern_note": "Idiom: 'Cut my waist' (ወገቤን ቆረጠኝ) implies sharp pain"
+    },
+    {
+      "category": "Musculoskeletal",
+      "colloquial_query": "ጉልበቴን እሳት ይለበልበኛል",
+      "normalized_symptom": "የጉልበት መቃጠል/ህመም (Knee Inflammation/Pain)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "knee",
+      "temporal": "continuous",
+      "pattern_note": "Metaphor: 'Burns me like fire (እሳት ይለበልበኛል)"
+    },
+    {
+      "category": "Musculoskeletal",
+      "colloquial_query": "እግሬ አብጧል",
+      "normalized_symptom": "የእግር እብጠት (Leg Swelling/Edema)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "leg",
+      "temporal": "visible",
+      "pattern_note": "Direct Observation"
+    },
+    {
+      "category": "Neurological",
+      "colloquial_query": "እግሬን እና እጄን ያደነዝዘኛል",
+      "normalized_symptom": "የእጅና እግር ድርዛዛ (Numbness/Tingling)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "limbs",
+      "temporal": "continuous",
+      "pattern_note": "Sensory: 'Makes me numb/dull' (ያደነዝዘኛል)"
+    },
+    {
+      "category": "Neurological",
+      "colloquial_query": "ሰውነቴን ያንቀጠቅጠኛል",
+      "normalized_symptom": "የሰውነት መንቀጥቀጥ (Tremors/Shivering)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "general",
+      "temporal": "involuntary",
+      "pattern_note": "Action verb: 'Shakes me'"
+    },
+    {
+      "category": "Sleep/Mental",
+      "colloquial_query": "እንቅልፍ እምቢ አለኝ",
+      "normalized_symptom": "እንቅልፍ ማጣት (Insomnia)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "general",
+      "temporal": "nocturnal",
+      "pattern_note": "Personification: 'Sleep refused me' (እምቢ አለኝ)"
+    },
+    {
+      "category": "Urinary",
+      "colloquial_query": "ሽንት ስሸና ያቃጥለኛል",
+      "normalized_symptom": "የሽንት ማቃጠል (Dysuria/Painful Urination)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "pelvis",
+      "temporal": "during action",
+      "pattern_note": "Contextual: 'When urinating' + Sensory 'Burning'"
+    },
+    {
+      "category": "Urinary",
+      "colloquial_query": "ሽንቴ ያሮጠኛል",
+      "normalized_symptom": "የሽንት መብዛት (Frequent Urination)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "pelvis",
+      "temporal": "frequent",
+      "pattern_note": "Idiom: 'Urine runs me' implies urgency/frequency"
+    },
+    {
+      "category": "Emergency",
+      "colloquial_query": "አፌ ተጣመመ",
+      "normalized_symptom": "የፊት መጣመም (Facial Drooping)",
+      "intent": "emergency",
+      "severity": "critical",
+      "body_part": "face",
+      "temporal": "sudden",
+      "pattern_note": "Visual description: 'Mouth twisted' (Stroke sign)"
+    },
+    {
+      "category": "Respiratory",
+      "colloquial_query": "አክታ ይመጣብኛል",
+      "normalized_symptom": "በአክታ የታጀበ ሳል (Productive Cough)",
+      "intent": "symptom_query",
+      "severity": "routine",
+      "body_part": "chest",
+      "temporal": "continuous",
+      "pattern_note": "Object focus: 'Sputum comes'"
+    },
+    {
+      "category": "General Pain",
+      "colloquial_query": "ሰውነቴ ይከብደኛል",
+      "normalized_symptom": "የሰውነት መዛል (Lethargy/Heavy feeling)",
+      "intent": "symptom_query",
+      "severity": "moderate",
+      "body_part": "general",
+      "temporal": "continuous",
+      "pattern_note": "Sensory: 'Body feels heavy' (ይከብደኛል)"
+    },
+    {
+      "category": "Emergency",
+      "colloquial_query": "ደሙ አልቆም አለ",
+      "normalized_symptom": "የማያቋርጥ ደም መፍሰስ (Uncontrollable Bleeding)",
+      "intent": "emergency",
+      "severity": "critical",
+      "body_part": "general",
+      "temporal": "continuous",
+      "pattern_note": "Negation: 'Blood refused to stop' (አልቆም አለ)"
+    },
+    {
+      "category": "Headache",
+      "colloquial_query": "ግማሽ ራሴን ይወጋኛል",
+      "normalized_symptom": "የአንድ ጎን ራስ ምታት (Migraine/Unilateral Headache)",
+      "intent": "symptom_query",
+      "severity": "high",
+      "body_part": "head",
+      "temporal": "intermittent",
+      "pattern_note": "Location specific: 'Half my head' (ግማሽ ራሴን)"
     }
   ]
 }
