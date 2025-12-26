@@ -95,7 +95,11 @@ class Normalizer:
             v = h["value"]
             if isinstance(v, dict):
                 intensity = intensity or v.get("intensity")
-                pain_quality = pain_quality or v.get("pain_quality")
+                resolved_pain_quality = v.get("pain_quality")
+                by_body_part = v.get("pain_quality_by_body_part")
+                if isinstance(by_body_part, dict) and body_part and body_part in by_body_part:
+                    resolved_pain_quality = by_body_part[body_part]
+                pain_quality = pain_quality or resolved_pain_quality
                 quality = quality or v.get("quality")
 
         temporal: str | None = temporal_hits[0]["value"] if temporal_hits else None

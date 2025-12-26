@@ -9,5 +9,24 @@
   "ይወጋኛል": {"pain_quality": "stabbing"},
   "ይወቅረኛል": {"pain_quality": "throbbing"},
   "ጭልምልም": {"quality": "darkening"},
-  "ሊፈነዳ": {"intensity": "severe", "quality": "explosive"}
+  "ሊፈነዳ": {"intensity": "severe", "quality": "explosive"},
+  "እንደ መዶሻ": {"pain_quality": "throbbing", "quality": "hammer_like"},
+  "ይቆርጠኛል": {"pain_quality": "cramping", "quality": "cutting"},
+  "ቆረጠኝ": {"pain_quality": "cramping", "quality": "cutting"},
+  "ተቆረጠ": {
+    "pain_quality": "cutting",
+    "quality": "cutting",
+    "pain_quality_by_body_part": {
+      "abdomen": "cramping",
+      "back": "pain"
+    }
+  },
+  "ነፋኝ": {"quality": "bloating"},
+  "ብርድ ብርድ": {"quality": "chills"},
+  "ሲር ሲር": {"quality": "wheezing"},
+  "በሃይል": {"intensity": "severe", "quality": "strong"},
+  "መምታት": {"pain_quality": "throbbing"},
+  "ይከርከረኛል": {"pain_quality": "scratchy"},
+  "ይታፈናል": {"quality": "congested"},
+  "አብጧል": {"quality": "swelling"}
 }

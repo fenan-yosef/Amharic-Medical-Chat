@@ -1,45 +1,348 @@
 {
   "source": "sample_data.json",
-  "notes": "These examples are used for embedding + similarity search. The embedding_text is derived from normalized_symptom by stripping English parentheses.",
+  "notes": "These examples are used for embedding + similarity search. The embedding_text is derived from normalized_symptom by stripping English parentheses.\n\nAuto-extended from sample_data.json: normalized_symptom is used as text after stripping parentheses.",
   "items": [
-    {"id": "ex001", "text": "ከባድ የራስ ምታት", "intent": "symptom_query", "symptom": "headache"},
-    {"id": "ex002", "text": "የሚመታ የራስ ምታት", "intent": "symptom_query", "symptom": "headache"},
-    {"id": "ex003", "text": "የግንባር ህመም", "intent": "symptom_query", "symptom": "headache"},
-    {"id": "ex004", "text": "ራስ ማዞር እና ህመም", "intent": "symptom_query", "symptom": "headache"},
-    {"id": "ex005", "text": "በጣም ከባድ የራስ ምታት", "intent": "symptom_query", "symptom": "headache"},
-
-    {"id": "ex006", "text": "የሆድ ቁርጠት", "intent": "symptom_query", "symptom": "stomach_pain"},
-    {"id": "ex007", "text": "የሆድ መነፋት", "intent": "symptom_query", "symptom": "stomach_pain"},
-    {"id": "ex008", "text": "የጨጓራ ህመም", "intent": "symptom_query", "symptom": "stomach_pain"},
-    {"id": "ex009", "text": "ከምግብ በኋላ የሆድ ህመም", "intent": "symptom_query", "symptom": "stomach_pain"},
-    {"id": "ex010", "text": "የሆድ መጮህ", "intent": "symptom_query", "symptom": "stomach_pain"},
-
-    {"id": "ex011", "text": "ከፍተኛ ትኩሳት", "intent": "symptom_query", "symptom": "fever"},
-    {"id": "ex012", "text": "የብርድ ስሜት", "intent": "symptom_query", "symptom": "fever"},
-    {"id": "ex013", "text": "ትኩሳት", "intent": "symptom_query", "symptom": "fever"},
-    {"id": "ex014", "text": "የሌሊት ላብ", "intent": "symptom_query", "symptom": "fever"},
-
-    {"id": "ex015", "text": "ደረቅ ሳል", "intent": "symptom_query", "symptom": "respiratory"},
-    {"id": "ex016", "text": "የደረት ህመም", "intent": "symptom_query", "symptom": "respiratory"},
-    {"id": "ex017", "text": "የትንፋሽ እጥረት", "intent": "symptom_query", "symptom": "respiratory"},
-    {"id": "ex018", "text": "የመተንፈስ ችግር", "intent": "symptom_query", "symptom": "respiratory"},
-
-    {"id": "ex019", "text": "የዓይን ብዥታ", "intent": "symptom_query", "symptom": "eye"},
-    {"id": "ex020", "text": "የዓይን እንባ መፍሰስ", "intent": "symptom_query", "symptom": "eye"},
-    {"id": "ex021", "text": "የዓይን መቅላት", "intent": "symptom_query", "symptom": "eye"},
-    {"id": "ex022", "text": "የዓይን ማየት አለመቻል", "intent": "emergency", "symptom": "eye"},
-
-    {"id": "ex023", "text": "ደም መትፋት", "intent": "emergency", "symptom": "respiratory"},
-    {"id": "ex024", "text": "ራስ መሳት", "intent": "emergency", "symptom": "general"},
-    {"id": "ex025", "text": "የመተንፈስ እጥረት", "intent": "emergency", "symptom": "respiratory"},
-
-    {"id": "ex026", "text": "የሰውነት ህመም", "intent": "symptom_query", "symptom": "general"},
-    {"id": "ex027", "text": "የድካም ስሜት", "intent": "symptom_query", "symptom": "general"},
-
-    {"id": "ex028", "text": "የሰውነት ማሳከክ", "intent": "symptom_query", "symptom": "skin"},
-    {"id": "ex029", "text": "የቆዳ ሽፍታ", "intent": "symptom_query", "symptom": "skin"},
-    {"id": "ex030", "text": "ያስነጥሰኛል", "intent": "symptom_query", "symptom": "sneezing"},
-    {"id": "ex031", "text": "የዓይን ብዥታ", "intent": "symptom_query", "symptom": "eye"},
-    {"id": "ex032", "text": "ዓይኔ ጭልምልም ይላል", "intent": "symptom_query", "symptom": "eye"}
+    {
+      "id": "ex001",
+      "text": "ከባድ የራስ ምታት",
+      "intent": "symptom_query",
+      "symptom": "headache"
+    },
+    {
+      "id": "ex002",
+      "text": "የሚመታ የራስ ምታት",
+      "intent": "symptom_query",
+      "symptom": "headache"
+    },
+    {
+      "id": "ex003",
+      "text": "የግንባር ህመም",
+      "intent": "symptom_query",
+      "symptom": "headache"
+    },
+    {
+      "id": "ex004",
+      "text": "ራስ ማዞር እና ህመም",
+      "intent": "symptom_query",
+      "symptom": "headache"
+    },
+    {
+      "id": "ex005",
+      "text": "በጣም ከባድ የራስ ምታት",
+      "intent": "symptom_query",
+      "symptom": "headache"
+    },
+    {
+      "id": "ex006",
+      "text": "የሆድ ቁርጠት",
+      "intent": "symptom_query",
+      "symptom": "stomach_pain"
+    },
+    {
+      "id": "ex007",
+      "text": "የሆድ መነፋት",
+      "intent": "symptom_query",
+      "symptom": "stomach_pain"
+    },
+    {
+      "id": "ex008",
+      "text": "የጨጓራ ህመም",
+      "intent": "symptom_query",
+      "symptom": "stomach_pain"
+    },
+    {
+      "id": "ex009",
+      "text": "ከምግብ በኋላ የሆድ ህመም",
+      "intent": "symptom_query",
+      "symptom": "stomach_pain"
+    },
+    {
+      "id": "ex010",
+      "text": "የሆድ መጮህ",
+      "intent": "symptom_query",
+      "symptom": "stomach_pain"
+    },
+    {
+      "id": "ex011",
+      "text": "ከፍተኛ ትኩሳት",
+      "intent": "symptom_query",
+      "symptom": "fever"
+    },
+    {
+      "id": "ex012",
+      "text": "የብርድ ስሜት",
+      "intent": "symptom_query",
+      "symptom": "fever"
+    },
+    {
+      "id": "ex013",
+      "text": "ትኩሳት",
+      "intent": "symptom_query",
+      "symptom": "fever"
+    },
+    {
+      "id": "ex014",
+      "text": "የሌሊት ላብ",
+      "intent": "symptom_query",
+      "symptom": "fever"
+    },
+    {
+      "id": "ex015",
+      "text": "ደረቅ ሳል",
+      "intent": "symptom_query",
+      "symptom": "respiratory"
+    },
+    {
+      "id": "ex016",
+      "text": "የደረት ህመም",
+      "intent": "symptom_query",
+      "symptom": "respiratory"
+    },
+    {
+      "id": "ex017",
+      "text": "የትንፋሽ እጥረት",
+      "intent": "symptom_query",
+      "symptom": "respiratory"
+    },
+    {
+      "id": "ex018",
+      "text": "የመተንፈስ ችግር",
+      "intent": "symptom_query",
+      "symptom": "respiratory"
+    },
+    {
+      "id": "ex019",
+      "text": "የዓይን ብዥታ",
+      "intent": "symptom_query",
+      "symptom": "eye"
+    },
+    {
+      "id": "ex020",
+      "text": "የዓይን እንባ መፍሰስ",
+      "intent": "symptom_query",
+      "symptom": "eye"
+    },
+    {
+      "id": "ex021",
+      "text": "የዓይን መቅላት",
+      "intent": "symptom_query",
+      "symptom": "eye"
+    },
+    {
+      "id": "ex022",
+      "text": "የዓይን ማየት አለመቻል",
+      "intent": "emergency",
+      "symptom": "eye"
+    },
+    {
+      "id": "ex023",
+      "text": "ደም መትፋት",
+      "intent": "emergency",
+      "symptom": "respiratory"
+    },
+    {
+      "id": "ex024",
+      "text": "ራስ መሳት",
+      "intent": "emergency",
+      "symptom": "general"
+    },
+    {
+      "id": "ex025",
+      "text": "የመተንፈስ እጥረት",
+      "intent": "emergency",
+      "symptom": "respiratory"
+    },
+    {
+      "id": "ex026",
+      "text": "የሰውነት ህመም",
+      "intent": "symptom_query",
+      "symptom": "general"
+    },
+    {
+      "id": "ex027",
+      "text": "የድካም ስሜት",
+      "intent": "symptom_query",
+      "symptom": "general"
+    },
+    {
+      "id": "ex028",
+      "text": "የሰውነት ማሳከክ",
+      "intent": "symptom_query",
+      "symptom": "skin"
+    },
+    {
+      "id": "ex029",
+      "text": "የቆዳ ሽፍታ",
+      "intent": "symptom_query",
+      "symptom": "skin"
+    },
+    {
+      "id": "ex030",
+      "text": "ያስነጥሰኛል",
+      "intent": "symptom_query",
+      "symptom": "sneezing"
+    },
+    {
+      "id": "ex031",
+      "text": "የዓይን ብዥታ",
+      "intent": "symptom_query",
+      "symptom": "eye"
+    },
+    {
+      "id": "ex032",
+      "text": "ዓይኔ ጭልምልም ይላል",
+      "intent": "symptom_query",
+      "symptom": "eye"
+    },
+    {
+      "id": "ex033",
+      "text": "የልብ ህመም",
+      "intent": "emergency",
+      "symptom": "respiratory"
+    },
+    {
+      "id": "ex034",
+      "text": "የጉሮሮ መብላት/ማሳከክ",
+      "intent": "symptom_query",
+      "symptom": "throat"
+    },
+    {
+      "id": "ex035",
+      "text": "የመዋጥ ችግር",
+      "intent": "symptom_query",
+      "symptom": "throat"
+    },
+    {
+      "id": "ex036",
+      "text": "የጥርስ ህመም",
+      "intent": "symptom_query",
+      "symptom": "dental"
+    },
+    {
+      "id": "ex037",
+      "text": "የአፍንጫ መታፈን",
+      "intent": "symptom_query",
+      "symptom": "nose"
+    },
+    {
+      "id": "ex038",
+      "text": "የአፍንጫ ፈሳሽ መውረድ",
+      "intent": "symptom_query",
+      "symptom": "nose"
+    },
+    {
+      "id": "ex039",
+      "text": "ማቅለሽለሽ",
+      "intent": "symptom_query",
+      "symptom": "stomach_digestive"
+    },
+    {
+      "id": "ex040",
+      "text": "ተቅማጥ",
+      "intent": "symptom_query",
+      "symptom": "stomach_digestive"
+    },
+    {
+      "id": "ex041",
+      "text": "የሆድ ድርቀት",
+      "intent": "symptom_query",
+      "symptom": "stomach_digestive"
+    },
+    {
+      "id": "ex042",
+      "text": "የልብ ምት መጨመር",
+      "intent": "symptom_query",
+      "symptom": "chest_heart"
+    },
+    {
+      "id": "ex043",
+      "text": "የልብ/የደረት ማቃጠል",
+      "intent": "symptom_query",
+      "symptom": "chest_heart"
+    },
+    {
+      "id": "ex044",
+      "text": "የጆሮ ጩኸት",
+      "intent": "symptom_query",
+      "symptom": "ear"
+    },
+    {
+      "id": "ex045",
+      "text": "የወገብ ህመም",
+      "intent": "symptom_query",
+      "symptom": "musculoskeletal"
+    },
+    {
+      "id": "ex046",
+      "text": "የጉልበት መቃጠል/ህመም",
+      "intent": "symptom_query",
+      "symptom": "musculoskeletal"
+    },
+    {
+      "id": "ex047",
+      "text": "የእግር እብጠት",
+      "intent": "symptom_query",
+      "symptom": "musculoskeletal"
+    },
+    {
+      "id": "ex048",
+      "text": "የእጅና እግር ድርዛዛ",
+      "intent": "symptom_query",
+      "symptom": "neurological"
+    },
+    {
+      "id": "ex049",
+      "text": "የሰውነት መንቀጥቀጥ",
+      "intent": "symptom_query",
+      "symptom": "neurological"
+    },
+    {
+      "id": "ex050",
+      "text": "እንቅልፍ ማጣት",
+      "intent": "symptom_query",
+      "symptom": "sleep_mental"
+    },
+    {
+      "id": "ex051",
+      "text": "የሽንት ማቃጠል",
+      "intent": "symptom_query",
+      "symptom": "urinary"
+    },
+    {
+      "id": "ex052",
+      "text": "የሽንት መብዛት",
+      "intent": "symptom_query",
+      "symptom": "urinary"
+    },
+    {
+      "id": "ex053",
+      "text": "የፊት መጣመም",
+      "intent": "emergency",
+      "symptom": "emergency"
+    },
+    {
+      "id": "ex054",
+      "text": "በአክታ የታጀበ ሳል",
+      "intent": "symptom_query",
+      "symptom": "respiratory"
+    },
+    {
+      "id": "ex055",
+      "text": "የሰውነት መዛል",
+      "intent": "symptom_query",
+      "symptom": "general"
+    },
+    {
+      "id": "ex056",
+      "text": "የማያቋርጥ ደም መፍሰስ",
+      "intent": "emergency",
+      "symptom": "general"
+    },
+    {
+      "id": "ex057",
+      "text": "የአንድ ጎን ራስ ምታት",
+      "intent": "symptom_query",
+      "symptom": "headache"
+    }
   ]
 }

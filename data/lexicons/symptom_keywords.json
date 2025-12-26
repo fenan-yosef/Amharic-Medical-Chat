@@ -34,5 +34,9 @@
   "general": {
     "keywords": ["ሰውነት", "ድካም", "አቅም"],
     "canonical_am": "የሰውነት ህመም አለብኝ"
+  },
+  "musculoskeletal": {
+    "keywords": ["ወገብ", "ወገቤ", "ጉልበት", "እግር", "ጡንቻ", "አጥንት"],
+    "canonical_am": "የወገብ ህመም"
   }
 }
